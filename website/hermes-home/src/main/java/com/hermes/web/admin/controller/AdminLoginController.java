@@ -1,0 +1,58 @@
+package com.hermes.web.admin.controller;
+
+import com.hermes.admin.service.AdminUserService;
+import com.hermes.core.service.GenericResponse;
+import com.hermes.core.util.ajax.AjaxResponse;
+import com.hermes.core.web.controller.AdminAbstractController;
+import com.hermes.core.web.form.ResetPasswordForm;
+import com.hermes.core.web.util.MessageUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Created by Martin on 2016/4/21.
+ */
+@Controller
+public class AdminLoginController extends AdminAbstractController {
+
+    @Autowired
+    protected AdminUserService adminUserService;
+
+    @RequestMapping(value = "/admin/login.html", method = RequestMethod.GET)
+    public String displayLogin(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        return "/admin/login";
+    }
+
+    @RequestMapping(value = "/admin/forgotUsername", method = RequestMethod.POST)
+    @ResponseBody
+    public String processForgotUserName(HttpServletRequest request,
+                                        @RequestParam("emailAddress") String email) {
+        return null;
+    }
+
+    @RequestMapping(value = "/changePassword", method = RequestMethod.POST)
+    @ResponseBody
+    public AjaxResponse processChangePassword(HttpServletRequest request, HttpServletResponse response, Model model,
+                                              @ModelAttribute("resetPasswordForm") ResetPasswordForm resetPasswordForm) {
+        GenericResponse errorResponse = adminUserService.changePassword(resetPasswordForm.getUsername(),
+                resetPasswordForm.getOldPassword(),
+                resetPasswordForm.getPassword(),
+                resetPasswordForm.getConfirmPassword());
+
+        if (errorResponse.getHasErrors()) {
+            String errorCode = errorResponse.getErrorCodesList().get(0);
+            return new AjaxResponse()
+                    .addEntry("status", "error")
+                    .addEntry("errorText", MessageUtil.getMessage("password." + errorCode));
+        } else {
+            return new AjaxResponse()
+                    .addEntry("data.status", "ok")
+                    .addEntry("successMessage", MessageUtil.getMessage("PasswordChange_success"));
+        }
+    }
+}

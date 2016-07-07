@@ -1,0 +1,59 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="profile-element" uib-dropdown>
+                    <a uib-dropdown-toggle href>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">{{main.userName}}</strong>
+                             </span>
+                                <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
+                            </span>
+                    </a>
+                    <ul uib-dropdown-menu="" class="animated fadeInRight m-t-xs">
+                        <li><a href="">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    IN+
+                </div>
+            </li>
+
+            <li ng-class="{active: $state.includes('pkp')}">
+                <a href="dashboard"><i class="fa fa-lg fa-shopping-cart"></i> <span class="nav-label">接送货管理</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('pkp')}">
+                </ul>
+            </li>
+
+            <li ng-class="{active: $state.includes('tfr')}">
+                <a href="monitor"><i class="fa fa-lg fa-truck"></i> <span class="nav-label">中转管理</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('tfr')}">
+                    <!--<li ui-sref-active="active"><a ui-sref="monitor.discover">自动发现</a></li>-->
+                </ul>
+            </li>
+
+            <li ng-class="{active: $state.includes('stl')}">
+                <a href="metrics"><i class="fa fa-lg fa-credit-card"></i> <span class="nav-label">结算管理</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('stl')}">
+                </ul>
+            </li>
+
+            <li ng-class="{active: $state.includes('bse')}">
+                <a href="subscribe"><i class="fa fa-lg fa-institution"></i> <span class="nav-label">营运管理</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('bse')}">
+                </ul>
+            </li>
+
+            <li ng-class="{active: $state.includes('sys')}">
+                <a href="admin"><i class="fa fa-lg fa-cog"></i> <span class="nav-label">系统管理</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('sys')}">
+                    <li ui-sref-active="active"><a ui-sref="admin.user">用户组管理</a></li>
+                    <li ui-sref-active="active"><a ui-sref="admin.role">用户管理</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+</nav>

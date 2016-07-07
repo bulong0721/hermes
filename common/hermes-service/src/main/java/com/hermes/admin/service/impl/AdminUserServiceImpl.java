@@ -1,0 +1,39 @@
+package com.hermes.admin.service.impl;
+
+import com.hermes.admin.dao.AdminUserDao;
+import com.hermes.admin.domain.AdminUser;
+import com.hermes.admin.service.AdminUserService;
+import com.hermes.core.service.GenericEntityServiceImpl;
+import com.hermes.core.service.GenericResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+/**
+ * Created by Martin on 2016/4/21.
+ */
+@Service
+public class AdminUserServiceImpl extends GenericEntityServiceImpl<Long, AdminUser> implements AdminUserService {
+
+    protected AdminUserDao adminUserDao;
+
+    @Autowired
+    public AdminUserServiceImpl(AdminUserDao adminUserDao) {
+        super(adminUserDao);
+        this.adminUserDao = adminUserDao;
+    }
+
+    @Override
+    public AdminUser getByUserName(String username) {
+        return adminUserDao.getByUserName(username);
+    }
+
+    @Override
+    public GenericResponse changePassword(String username, String oldPassword, String password, String confirmPassword) {
+        return null;
+    }
+
+    @Override
+    public AdminUser getByLogin(String login) {
+        return adminUserDao.getByLogin(login);
+    }
+}
