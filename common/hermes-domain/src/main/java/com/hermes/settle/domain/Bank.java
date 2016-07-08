@@ -8,7 +8,6 @@ import javax.persistence.*;
  * Created by Martin on 2016/4/11.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "C_BANK")
 public class Bank extends GenericEntity<Long, Bank> {
 

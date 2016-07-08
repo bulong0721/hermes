@@ -14,8 +14,7 @@ import java.util.List;
  * Created by Martin on 2016/4/11.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "C_ORDER")
+@Table(name = "LOG_ORDER")
 public class Order extends GenericEntity<Long, Order> {
 
     @Id

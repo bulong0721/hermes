@@ -61,6 +61,20 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
                 loadPlugin: managerLoader
             }
         })
+        .state('pkp.order', {
+            url: "/order",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'orderMgrCtrl',
+            data: {
+                subTitle: '订单管理',
+                datatable: 'assets/mvc/bse/view/order_datatable.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return controllerLoader($ocLazyLoad, 'pkp', 'orderCtrl.js')
+                }
+            }
+        })
         .state('tfr', {
             abstract: true,
             url: "/tfr",
@@ -92,6 +106,20 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             },
             resolve: {
                 loadPlugin: managerLoader
+            }
+        })
+        .state('bse.partner', {
+            url: "/partner",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'partnerMgrCtrl',
+            data: {
+                subTitle: '客户管理',
+                datatable: 'assets/mvc/bse/view/partner_datatable.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return controllerLoader($ocLazyLoad, 'bse', 'partnerCtrl.js')
+                }
             }
         })
         .state('sys', {

@@ -10,8 +10,7 @@ import javax.persistence.*;
  * Created by Martin on 2016/4/11.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "C_BPARTNER_ACCOUNT")
+@Table(name = "LOG_BPARTNER_ACCOUNT")
 public class BPartnerAccount extends GenericEntity<Long, BPartnerAccount> {
 
     @Id
@@ -28,13 +27,13 @@ public class BPartnerAccount extends GenericEntity<Long, BPartnerAccount> {
     @JoinColumn(name = "BPARTNER_ID", referencedColumnName = "BPARTNER_ID")
     protected BPartner bPartner;
 
-    @Column(name = "name", length = 10)
+    @Column(name = "NAME", length = 10)
     private String name;
 
-    @Column(name = "account_no", length = 20)
+    @Column(name = "ACCOUNT_NO", length = 20)
     private String accountNo;
 
-    @Column(name = "account_type", length = 10)
+    @Column(name = "ACCOUNT_TYPE", length = 10)
     private String accountType;
 
     @Override
@@ -55,11 +54,11 @@ public class BPartnerAccount extends GenericEntity<Long, BPartnerAccount> {
         this.bank = bank;
     }
 
-    public BPartner getbPartner() {
+    public BPartner getBPartner() {
         return bPartner;
     }
 
-    public void setbPartner(BPartner bPartner) {
+    public void setBPartner(BPartner bPartner) {
         this.bPartner = bPartner;
     }
 

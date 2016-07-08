@@ -11,7 +11,7 @@
         <class>com.hermes.admin.domain.ForgotPasswordSecurityToken</class>
 
         <class>com.hermes.customer.domain.ChallengeQuestion</class>
-        <class>com.hermes.domain.Customer</class>
+        <class>com.hermes.customer.domain.Customer</class>
         <class>com.hermes.customer.domain.CustomerAddress</class>
         <class>com.hermes.customer.domain.CustomerAttribute</class>
         <class>com.hermes.customer.domain.CustomerPhone</class>
@@ -21,11 +21,37 @@
         <class>com.hermes.profile.domain.Country</class>
         <class>com.hermes.profile.domain.Locale</class>
         <class>com.hermes.profile.domain.Media</class>
-        <class>com.hermes.domain.Address</class>
+        <class>com.hermes.profile.domain.Address</class>
         <class>com.hermes.profile.domain.Phone</class>
         <class>com.hermes.profile.domain.Role</class>
 
         <class>com.hermes.client.domain.Client</class>
         <class>com.hermes.client.domain.Org</class>
+
+        <class>com.hermes.partner.domain.BPartner</class>
+        <class>com.hermes.partner.domain.BPartnerAccount</class>
+
+        <class>com.hermes.pickup.domain.Invoice</class>
+        <class>com.hermes.pickup.domain.InvoiceLine</class>
+        <class>com.hermes.pickup.domain.Order</class>
+        <class>com.hermes.pickup.domain.OrderLine</class>
+
+        <class>com.hermes.settle.domain.Allocation</class>
+        <class>com.hermes.settle.domain.AllocationLine</class>
+        <class>com.hermes.settle.domain.Bank</class>
+        <class>com.hermes.settle.domain.BankAccount</class>
+        <class>com.hermes.settle.domain.Cash</class>
+        <class>com.hermes.settle.domain.CashLine</class>
+        <class>com.hermes.settle.domain.Payment</class>
+        <class>com.hermes.settle.domain.PaymentBatch</class>
+
+        <class>com.hermes.transfer.domain.Inout</class>
+        <class>com.hermes.transfer.domain.InoutLine</class>
+        <class>com.hermes.transfer.domain.Inventory</class>
+        <class>com.hermes.transfer.domain.Movement</class>
+        <class>com.hermes.transfer.domain.MovementLine</class>
+        <class>com.hermes.transfer.domain.MovementTrack</class>
+        <class>com.hermes.transfer.domain.Vehicle</class>
+        <class>com.hermes.transfer.domain.Warehouse</class>
     </persistence-unit>
 </persistence>

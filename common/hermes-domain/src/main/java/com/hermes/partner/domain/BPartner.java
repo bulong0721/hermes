@@ -10,8 +10,7 @@ import java.sql.Date;
  * Created by Martin on 2016/4/11.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "C_BPARTNER")
+@Table(name = "LOG_BPARTNER")
 public class BPartner extends GenericEntity<Long, BPartner> {
 
     @Id
@@ -19,43 +18,43 @@ public class BPartner extends GenericEntity<Long, BPartner> {
     @TableGenerator(name = "TABLE_GEN", table = "C_SEQUENCER", pkColumnName = "SEQ_NAME", valueColumnName = "SEQ_COUNT", pkColumnValue = "BPARTNER_SEQ_NEXT_VAL", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "TABLE_GEN")
     private Long id;
-    @Column(name = "pay_method")
+    @Column(name = "PAY_METHOD")
     private String payMethod;
-    @Column(name = "industry_type")
+    @Column(name = "INDUSTRY_TYPE")
     private Integer industryType;
-    @Basic
+    @Column(name = "CONSIGNEE")
     private boolean consignee = true;
-    @Basic
+    @Column(name = "CONSIGNOR")
     private boolean consignor = false;
-    @Basic
+    @Column(name = "SHIPPER")
     private boolean shipper = false;
-    @Column(name = "contract_no")
+    @Column(name = "CONTRACT_NO")
     private String contractNo;
-    @Column(name = "date_firstsale")
+    @Column(name = "DATE_FIRSTSALE")
     private Date dateFirstsale;
-    @Column(name = "dock_addr")
+    @Column(name = "DOCK_ADDR")
     private String dockAddr;
-    @Column(name = "fax", length = 20)
+    @Column(name = "FAX", length = 20)
     private String fax;
-    @Column(name = "important_note")
+    @Column(name = "IMPORTANT_NOTE")
     private String importantNote;
-    @Column(name = "fax", length = 20)
+    @Column(name = "MOBILE", length = 20)
     private String mobile;
-    @Column(name = "name", length = 20)
+    @Column(name = "NAME", length = 20)
     private String name;
-    @Column(name = "org_name", length = 40)
+    @Column(name = "ORG_NAME", length = 40)
     private String orgName;
-    @Column(name = "name", length = 20)
+    @Column(name = "PHONE", length = 20)
     private String phone;
-    @Column(name = "name", length = 60)
+    @Column(name = "ADDR", length = 60)
     private String addr;
-    @Column(name = "name", length = 10)
+    @Column(name = "ZIP", length = 10)
     private String zip;
-    @Column(name = "credit_quota")
+    @Column(name = "CREDIT_QUOTA")
     private BigDecimal creditQuota;
-    @Column(name = "accout_balance")
-    private BigDecimal accoutBalance;
-    @Column(name = "credit_balance")
+    @Column(name = "ACCOUNT_BALANCE")
+    private BigDecimal accountBalance;
+    @Column(name = "CREDIT_BALANCE")
     private BigDecimal creditBalance;
 
     @Override
@@ -204,12 +203,12 @@ public class BPartner extends GenericEntity<Long, BPartner> {
         this.creditQuota = creditQuota;
     }
 
-    public BigDecimal getAccoutBalance() {
-        return accoutBalance;
+    public BigDecimal getAccountBalance() {
+        return accountBalance;
     }
 
-    public void setAccoutBalance(BigDecimal accoutBalance) {
-        this.accoutBalance = accoutBalance;
+    public void setAccountBalance(BigDecimal accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     public BigDecimal getCreditBalance() {

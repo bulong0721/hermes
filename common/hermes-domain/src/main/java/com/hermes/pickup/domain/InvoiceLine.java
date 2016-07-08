@@ -11,8 +11,7 @@ import java.math.BigDecimal;
  * Created by Martin on 2016/4/11.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "C_INVOICE_LINE")
+@Table(name = "LOG_INVOICE_LINE")
 public class InvoiceLine extends GenericEntity<Long, InvoiceLine> {
 
     @Id
@@ -51,5 +50,53 @@ public class InvoiceLine extends GenericEntity<Long, InvoiceLine> {
     @Override
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getChargeID() {
+        return chargeID;
+    }
+
+    public void setChargeID(Long chargeID) {
+        this.chargeID = chargeID;
+    }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
+
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
+
+    public BigDecimal getLineAmt() {
+        return lineAmt;
+    }
+
+    public void setLineAmt(BigDecimal lineAmt) {
+        this.lineAmt = lineAmt;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public Customer getUser1() {
+        return user1;
+    }
+
+    public void setUser1(Customer user1) {
+        this.user1 = user1;
+    }
+
+    public Customer getUser2() {
+        return user2;
+    }
+
+    public void setUser2(Customer user2) {
+        this.user2 = user2;
     }
 }

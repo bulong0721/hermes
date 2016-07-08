@@ -16,11 +16,10 @@ import java.util.Map;
  * Created by Martin on 2016/4/14.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "C_CUSTOMER")
 public class Customer extends GenericEntity<Long, Customer> {
     @Id
-    @Column(name = "ADDRESS_ID", unique = true, nullable = false)
+    @Column(name = "CUSTOMER_ID", unique = true, nullable = false)
     @TableGenerator(name = "TABLE_GEN", table = "C_SEQUENCER", pkColumnName = "SEQ_NAME", valueColumnName = "SEQ_COUNT", pkColumnValue = "CUSTOMER_SEQ_NEXT_VAL",allocationSize=1)
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "TABLE_GEN")
     protected Long id;

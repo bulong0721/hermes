@@ -9,8 +9,7 @@ import java.math.BigDecimal;
  * Created by Martin on 2016/4/11.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "C_ORDER_LINE")
+@Table(name = "LOG_ORDER_LINE")
 public class OrderLine extends GenericEntity<Long, OrderLine> {
 
     @Id

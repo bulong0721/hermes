@@ -7,7 +7,6 @@ import com.hermes.transfer.domain.Movement;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -15,8 +14,7 @@ import java.util.List;
  * Created by Martin on 2016/4/11.
  */
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "C_INVOICE")
+@Table(name = "LOG_INVOICE")
 public class Invoice extends GenericEntity<Long, Invoice> {
 
     @Id
@@ -44,11 +42,11 @@ public class Invoice extends GenericEntity<Long, Invoice> {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "DATE_INVOICE")
-    private Timestamp dateInvoice;
+    private Date dateInvoice;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "DATE_ORDERED")
-    private Timestamp dateOrdered;
+    private Date dateOrdered;
 
     @Column(name = "DESCRIPTION", length = 255)
     private String description;
@@ -70,11 +68,11 @@ public class Invoice extends GenericEntity<Long, Invoice> {
     private boolean sotrx;
 
     @OneToOne(targetEntity = Movement.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "MOVEMENT_ID")
+    @JoinColumn(name = "MOVEMENT_ID", referencedColumnName = "MOVEMENT_ID")
     private Movement movement;
 
     @OneToOne(targetEntity = Order.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "ORDER_ID")
+    @JoinColumn(name = "ORDER_ID", referencedColumnName = "ORDER_ID")
     private Order order;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.ALL}, mappedBy = "invoice")
@@ -130,19 +128,19 @@ public class Invoice extends GenericEntity<Long, Invoice> {
         this.grandTotal = grandTotal;
     }
 
-    public Timestamp getDateInvoice() {
+    public Date getDateInvoice() {
         return dateInvoice;
     }
 
-    public void setDateInvoice(Timestamp dateInvoice) {
+    public void setDateInvoice(Date dateInvoice) {
         this.dateInvoice = dateInvoice;
     }
 
-    public Timestamp getDateOrdered() {
+    public Date getDateOrdered() {
         return dateOrdered;
     }
 
-    public void setDateOrdered(Timestamp dateOrdered) {
+    public void setDateOrdered(Date dateOrdered) {
         this.dateOrdered = dateOrdered;
     }
 
