@@ -20,67 +20,78 @@ public class Vehicle extends GenericEntity<Long, Vehicle> {
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "TABLE_GEN")
     private Long id;
 
+    //车主
     @ManyToOne(targetEntity = Customer.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "OWNER_ID", referencedColumnName = "CUSTOMER_ID")
     private Customer owner;
 
+    //在途发车
     @OneToOne(targetEntity = Movement.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "ENTRUST_MOVE_ID", referencedColumnName = "MOVEMENT_ID")
     private Movement entrustMovement;
 
+    //司机
     @ManyToOne(targetEntity = Customer.class, fetch = FetchType.LAZY)
     @JoinColumn(name = "DRIVER_ID", referencedColumnName = "CUSTOMER_ID")
     private Customer driver;
 
+    //车辆性质
     @Column(name = "VEHICLE_NATURE", length = 10)
     private String vehicleNature;
 
+    //注释
     @Column(name = "COMMENT", length = 20)
     private String comment;
 
+    //合同编号
     @Column(name = "CONTRACT_NO", length = 20)
     private String contractNo;
 
+    //出发日期
     @Temporal(TemporalType.DATE)
     @Column(name = "DATE_DEPART")
     private Date dateDepart;
 
+    //报废日期
     @Temporal(TemporalType.DATE)
     @Column(name = "DATE_SCRAP")
     private Date dateScrap;
 
+    //使用日期
     @Temporal(TemporalType.DATE)
     @Column(name = "DATE_USING")
     private Date dateUsing;
 
+    //司机姓名
     @Column(name = "DRIVER_NAME", length = 10)
     private String driverName;
 
+    //司机地址
     @Column(name = "DRIVER_ADDR", length = 60)
     private String driverAddr;
 
     //车名
-    @Column(name = "name", length = 20)
+    @Column(name = "NAME", length = 20)
     private String name;
 
     //行驶证号
-    @Column(name = "operation_no")
+    @Column(name = "OPERATION_NO")
     private String operationNo;
 
     //车主
-    @Column(name = "owner_name", length = 20)
+    @Column(name = "OWNER_NAME", length = 20)
     private String ownerName;
 
     //车主地址
-    @Column(name = "owner_addr", length = 60)
+    @Column(name = "OWNER_ADDR", length = 60)
     private String ownerAddr;
 
     //车主电话
-    @Column(name = "owner_phone", length = 20)
+    @Column(name = "OWNER_PHONE", length = 20)
     private String ownerPhone;
 
     //车牌号
-    @Column(name = "plate_no", length = 10)
+    @Column(name = "PLATE_NO", length = 10)
     private String plateNo;
 
     //挂车车牌号
@@ -107,7 +118,8 @@ public class Vehicle extends GenericEntity<Long, Vehicle> {
     @Column(name = "LICENSE_NO")
     private String licenseNo;
 
-    @Column(name = "限行", length = 60)
+    //限行
+    @Column(name = "LIMITED", length = 60)
     private String limited;
 
     //当前里程

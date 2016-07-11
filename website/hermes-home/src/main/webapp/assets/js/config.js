@@ -67,7 +67,22 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             controller: 'orderMgrCtrl',
             data: {
                 subTitle: '订单管理',
-                datatable: 'assets/mvc/bse/view/order_datatable.html'
+                datatable: 'assets/mvc/pkp/view/order_datatable.html',
+                editor: 'assets/mvc/pkp/view/order_editor.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return controllerLoader($ocLazyLoad, 'pkp', 'orderCtrl.js')
+                }
+            }
+        })
+        .state('pkp.sign', {
+            url: "/sign",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'orderMgrCtrl',
+            data: {
+                subTitle: '派送签收',
+                datatable: 'assets/mvc/pkp/view/order_datatable.html'
             },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -119,6 +134,20 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
                     return controllerLoader($ocLazyLoad, 'bse', 'partnerCtrl.js')
+                }
+            }
+        })
+        .state('bse.vehicle', {
+            url: "/vehicle",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'vehicleMgrCtrl',
+            data: {
+                subTitle: '车辆管理',
+                datatable: 'assets/mvc/bse/view/vehicle_datatable.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return controllerLoader($ocLazyLoad, 'bse', 'vehicleCtrl.js')
                 }
             }
         })

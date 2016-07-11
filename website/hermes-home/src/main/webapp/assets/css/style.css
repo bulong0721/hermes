@@ -10032,3 +10032,55 @@ th.center, td.center {
     max-width: 100%;
     margin-bottom: 10px !important;
 }
+
+.display-flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-4 {
+    flex: 4;
+}
+
+.flex-5 {
+    flex: 5;
+}
+
+.flex-6 {
+    flex: 6;
+}
+
+.flex-1_5 {
+    flex: 1.5;
+}
+
+.flex-2_5 {
+    flex: 2.5;
+}
+
+.flex-3_5 {
+    flex: 3.5;
+}
+
+[class*="flex-"] {
+    padding-left: 10px;
+}
+
+[class*="flex-"]:first-child {
+    padding-left: 0;
+}
+
+[class*="flex-"]:nth-last-child(2) {
+    padding-right: 0;
+}

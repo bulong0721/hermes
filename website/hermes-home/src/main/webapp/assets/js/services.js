@@ -108,9 +108,9 @@ function constService($filter, $compile, $resource, $state, $q, NgTableParams) {
 }
 
 /*
- * fromly
+ * FormUtil
  * */
-function fromlyService(formlyConfig, $window) {
+function formlyService(formlyConfig, $window) {
     //自定义formly Label&input一行显示
     formlyConfig.setWrapper({
         name: 'lineLabel',
@@ -125,7 +125,6 @@ function fromlyService(formlyConfig, $window) {
     });
 
     /*以下 使用forEach*/
-
     //input
     formlyConfig.setType({
         name: 'c_input',
@@ -235,4 +234,4 @@ function fromlyService(formlyConfig, $window) {
 angular
     .module('inspinia')
     .service('Constants', constService)
-    .service('Fromly', fromlyService);
+    .service('Formly', formlyService);

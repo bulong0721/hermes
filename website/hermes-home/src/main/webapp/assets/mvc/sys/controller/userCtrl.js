@@ -33,10 +33,4 @@ function userMgrCtrl($scope, $resource, Constants) {
     };
 
     Constants.initMgrCtrl(mgrData, $scope);
-
-    $scope.goEditor = function(rowIndex) {
-        $resource('/admin/zabbix/login').save({}, {}, function(resp){
-            alert(resp.statusMessage);
-        });
-    };
 }
