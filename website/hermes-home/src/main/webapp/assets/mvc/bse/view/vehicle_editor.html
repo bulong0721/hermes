@@ -1,0 +1,37 @@
+<uib-tabset>
+    <uib-tab>
+        <uib-tab-heading>
+            <i class="fa fa-truck"></i>基本
+        </uib-tab-heading>
+        <div class="panel-body">
+            <div class="col-xs-2">
+            </div>
+            <div class="col-xs-6">
+                <formly-form model="formData.model" fields="formData.fields" form="formData.form" options="formData.options">
+
+                </formly-form>
+            </div>
+        </div>
+    </uib-tab>
+    <uib-tab>
+        <uib-tab-heading>
+            <i class="fa fa-user-secret"></i>车主
+        </uib-tab-heading>
+        <div class="panel-body">
+        </div>
+    </uib-tab>
+    <uib-tab>
+        <uib-tab-heading>
+            <i class="fa fa-user"></i>司机
+        </uib-tab-heading>
+        <div class="panel-body">
+        </div>
+    </uib-tab>
+</uib-tabset>
+<div class="col-xs-2">
+</div>
+<div class="col-xs-6">
+    <button class="btn btn-primary" ng-click="processSubmit()"><i class="fa fa-sm fa-check"></i>&nbsp;提交</button>
+    <button class="btn m-l" ng-click="goDataTable()"><i class="fa fa-undo"></i>返回</button>
+</div>
+<br /><br />

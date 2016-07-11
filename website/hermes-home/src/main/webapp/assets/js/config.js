@@ -143,7 +143,8 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             controller: 'vehicleMgrCtrl',
             data: {
                 subTitle: '车辆管理',
-                datatable: 'assets/mvc/bse/view/vehicle_datatable.html'
+                datatable: 'assets/mvc/bse/view/vehicle_datatable.html',
+                editor: 'assets/mvc/bse/view/vehicle_editor.html'
             },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
