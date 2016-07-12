@@ -10084,3 +10084,136 @@ th.center, td.center {
 [class*="flex-"]:nth-last-child(2) {
     padding-right: 0;
 }
+
+/*/!*====================================new style====================================*!/*/
+/*.wrapper-content {padding: 15px 0px 20px;}*/
+.textAlign {
+    text-align: center;
+    background: #fff;
+}
+
+#right-sidebar {
+    background: rgba(0, 0, 0, .1);
+    border: none;
+    top: 0;
+    width: 100% !important;
+    z-index: 9999;
+    bottom: 0;
+    position: fixed;
+    right: 0;
+}
+
+#right-sidebar .sidebar-container {
+    width: 650px;
+    margin: 100px auto 0;
+    background: #fff;
+    border: rgba(0, 0, 0, .2) 8px solid;
+}
+
+#right-sidebar .sidebar-container .ibox {
+    margin: 0;
+    text-align: center;
+}
+
+#right-sidebar .sidebar-container .ibox-content {
+    text-align: left
+}
+
+#right-sidebar .sidebar-container ul {
+    margin: 0 0 20px 0;
+    cursor: pointer
+}
+
+.sidebar-container .sidebar-message {
+    padding: 8px 10px;
+}
+
+.showThisMerchant {
+    padding: 10px;
+}
+
+.showThisMerchant span {
+    display: block
+}
+
+.showThisMerchant span:first-child {
+    color: #1ab394;
+}
+
+.showThisMerchant i {
+    color: #ccc;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.formly {
+}
+
+.formly .formly-field {
+    margin: 10px 0;
+}
+
+.formly .formly-field .form-group {
+    overflow: hidden;
+}
+
+.formly .formly-field label {
+    margin: 0;
+    text-align: right;
+    padding: 6px 0;
+}
+
+.formly .formly-field input, .c_formly_line select {
+    max-width: 450px
+}
+
+.formly .formly-field .radio-group .radio {
+    display: inline-block;
+    margin: 0 10px 10px 20px;
+}
+
+.formly .formly-field .radio-group input, .formly .formly-field .checkbox input {
+    width: auto;
+}
+
+.formly .formly-field .checkbox {
+    margin: 0 0 0 20px;
+}
+
+.file-box {
+    float: none;
+    display: inline-block;
+}
+
+.search-input {
+    margin: 0em 1em;
+    display: block;
+    padding: 4px;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
+
+.nav-bareheaded {
+    display: none;
+}
+
+.ngtables {
+    overflow: hidden;
+}
+
+.ngtables .pagination {
+    margin: 0;
+}
+
+.c_select select {
+    max-width: 260px;
+}
+
+.formly-min-checkbox input {
+    width: auto;
+    height: auto;
+    margin-top: 9px;
+}
+
+.filies {
+}
