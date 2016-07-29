@@ -12,14 +12,18 @@
     </div>
 </div>
 <div class="wrapper wrapper-content">
-    <div class="row">
-        <uib-tabset type="bareheaded">
-            <uib-tab heading="table" active="showDataTable">
-                <div ng-include="$state.current.data.datatable"/>
-            </uib-tab>
-            <uib-tab heading="editor" active="showEditor">
-                <div ng-include="$state.current.data.editor || 'assets/mvc/desktop/view/basic_editor.html'"/>
-            </uib-tab>
-        </uib-tabset>
-    </div>
+    <uib-tabset type="bareheaded" active="activeTab">
+        <uib-tab heading="table" index="0">
+            <div ng-include="$state.current.data.datatable"/>
+        </uib-tab>
+        <uib-tab heading="editor" index="1">
+            <div ng-include="$state.current.data.editor || 'assets/mvc/desktop/view/basic_editor.html'"/>
+        </uib-tab>
+        <uib-tab heading="table" index="2">
+            <div ng-include="$state.current.data.other1"/>
+        </uib-tab>
+        <uib-tab heading="table" index="3">
+            <div ng-include="$state.current.data.other2"/>
+        </uib-tab>
+    </uib-tabset>
 </div>

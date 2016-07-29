@@ -4,12 +4,12 @@ import com.hermes.client.domain.QClient;
 import com.hermes.core.dao.GenericEntityDaoImpl;
 import com.hermes.core.util.Pagination;
 import com.hermes.core.util.PageResult;
+import com.hermes.core.util.StringUtil;
 import com.hermes.core.util.WhereDTO;
 import com.hermes.client.dao.ClientDao;
 import com.hermes.client.domain.Client;
 import com.querydsl.jpa.JPQLQuery;
 import com.querydsl.jpa.impl.JPAQuery;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
@@ -40,7 +40,7 @@ public class ClientDaoImpl extends GenericEntityDaoImpl<Long, Client> implements
         JPQLQuery<Client> query = new JPAQuery(getEntityManager());
         resultList.setTotal(query.from(qMerchant).fetchCount());
         resultList.setPagination(pagination);
-        if (StringUtils.isNotBlank(where.getName())) {
+        if (!StringUtil.isBlank(where.getName())) {
             query.where(qMerchant.name.like("%" + where.getName() + "%"));
         }
         resultList.setList(query.offset(pagination.getOffset()).limit(pagination.getCount()).fetch());

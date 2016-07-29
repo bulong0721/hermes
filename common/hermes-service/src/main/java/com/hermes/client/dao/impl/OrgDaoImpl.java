@@ -4,12 +4,12 @@ import com.hermes.client.domain.QOrg;
 import com.hermes.core.dao.GenericEntityDaoImpl;
 import com.hermes.core.util.Pagination;
 import com.hermes.core.util.PageResult;
+import com.hermes.core.util.StringUtil;
 import com.hermes.core.util.WhereDTO;
 import com.hermes.client.dao.OrgDao;
 import com.hermes.client.domain.Org;
 import com.querydsl.jpa.JPQLQuery;
 import com.querydsl.jpa.impl.JPAQuery;
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Repository;
@@ -64,7 +64,7 @@ public class OrgDaoImpl extends GenericEntityDaoImpl<Long, Org> implements OrgDa
         JPQLQuery<Org> query = new JPAQuery(getEntityManager());
         resultList.setTotal(query.from(qMerchantStore).fetchCount());
         resultList.setPagination(pagination);
-        if (StringUtils.isNotBlank(where.getName())) {
+        if (!StringUtil.isBlank(where.getName())) {
             query.where(qMerchantStore.name.like("%" + where.getName() + "%"));
         }
         resultList.setList(query.offset(pagination.getOffset()).limit(pagination.getCount()).fetch());

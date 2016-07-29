@@ -19,7 +19,7 @@
  */
 package com.hermes.core.exception;
 
-import org.apache.commons.lang3.StringUtils;
+import com.hermes.core.util.StringUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -94,7 +94,7 @@ public class ExceptionHelper {
             return (RuntimeException) e;
         }
         try {
-            if (StringUtils.isEmpty(message)) {
+            if (StringUtil.isEmpty(message)) {
                 return wrapType.getConstructor(Throwable.class).newInstance(e);
             } else {
                 return wrapType.getConstructor(String.class, Throwable.class).newInstance(message, e);
