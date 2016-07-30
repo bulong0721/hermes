@@ -56,7 +56,7 @@ public class AdminFilter extends HandlerInterceptorAdapter {
                 return true;
             }
 
-            if (!user.getName().equals(userName)) {
+            if (!user.getLogin().equals(userName)) {
                 user = userService.getByLogin(userName);
                 if (user != null) {
 //                    storeCode = user.getOrg().getCode();
