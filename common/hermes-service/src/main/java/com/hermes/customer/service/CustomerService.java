@@ -8,5 +8,5 @@ import com.hermes.customer.domain.Customer;
  */
 public interface CustomerService extends GenericEntityService<Long, Customer> {
 
-    Customer getByUsername(String username, boolean b);
+    Customer getByUsername(String username);
 }

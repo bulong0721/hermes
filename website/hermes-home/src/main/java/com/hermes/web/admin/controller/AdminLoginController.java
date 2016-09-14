@@ -1,7 +1,7 @@
 package com.hermes.web.admin.controller;
 
 import com.hermes.admin.service.AdminUserService;
-import com.hermes.core.web.controller.AdminAbstractController;
+import com.hermes.core.web.controller.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * Created by Martin on 2016/4/21.
  */
 @Controller
-public class AdminLoginController extends AdminAbstractController {
+public class AdminLoginController extends AbstractController {
 
     @Autowired
     protected AdminUserService adminUserService;

@@ -28,9 +28,6 @@
     <!-- datasource -->
     <import resource="classpath:/spring/datasource-c3p0.xml"/>
 
-    <!-- properties -->
-    <import resource="classpath:/spring/eagle-config.xml"/>
-
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="persistenceUnitName" value="sm-unit"/>
         <property name="dataSource" ref="datasource"/>
@@ -44,11 +41,11 @@
             </bean>
         </property>
         <property name="jpaProperties">
-            <util:map>
+            <map>
                 <entry key="hibernate.default_schema" value="${db.schema}"/>
                 <entry key="hibernate.hbm2ddl.auto" value="${hibernate.hbm2ddl.auto}"/>
                 <entry key="hibernate.show_sql" value="true"/>
-            </util:map>
+            </map>
         </property>
 
         <property name="loadTimeWeaver">
@@ -90,7 +87,6 @@
             <list>
                 <value>classpath:database.properties</value>
                 <value>classpath:email.properties</value>
-                <value>classpath:configs.properties</value>
             </list>
         </property>
     </bean>

@@ -1,7 +1,7 @@
 package com.hermes.core.service;
 
 import com.hermes.core.exception.ServiceException;
-import com.hermes.core.util.GenericEntityUtils;
+import com.hermes.core.util.GenericEntityUtil;
 import com.hermes.core.GenericEntity;
 import com.hermes.core.dao.GenericEntityDao;
 
@@ -23,7 +23,7 @@ public abstract class GenericEntityServiceImpl<K extends Serializable & Comparab
     public GenericEntityServiceImpl(GenericEntityDao<K, E> genericDao) {
         this.genericDao = genericDao;
 
-        this.objectClass = (Class<E>) GenericEntityUtils.getGenericEntityClassFromComponentDefinition(getClass());
+        this.objectClass = (Class<E>) GenericEntityUtil.getGenericEntityClassFromComponentDefinition(getClass());
     }
 
     protected final Class<E> getObjectClass() {

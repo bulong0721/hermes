@@ -3,6 +3,9 @@ package com.hermes.customer.dao.impl;
 import com.hermes.core.dao.GenericEntityDaoImpl;
 import com.hermes.customer.dao.CustomerDao;
 import com.hermes.customer.domain.Customer;
+import com.hermes.customer.domain.QCustomer;
+import com.querydsl.jpa.JPQLQuery;
+import com.querydsl.jpa.impl.JPAQuery;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,7 +18,12 @@ public class CustomerDaoImpl  extends GenericEntityDaoImpl<Long, Customer> imple
 
     @Override
     public Customer getByUsername(String username) {
-        return null;
+        QCustomer qCustomer = QCustomer.customer;
+        JPQLQuery<Customer> query = new JPAQuery<Customer>(getEntityManager());
+        query.from(qCustomer);
+
+        Customer customer = query.fetchFirst();
+        return customer;
     }
 
     @Override

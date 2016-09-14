@@ -29,38 +29,6 @@ public class StringUtil {
         }
     }
 
-    public static double determineSimilarity(String test1, String test2) {
-        String first = new String(test1);
-        first = first.replaceAll("[ \\t\\n\\r\\f\\v\\/'-]", "");
-        Long originalChecksum = StringUtil.getChecksum(first);
-        String second = new String(test2);
-        second = second.replaceAll("[ \\t\\n\\r\\f\\v\\/'-]", "");
-        Long myChecksum = StringUtil.getChecksum(second);
-        StatCalc calc = new StatCalc();
-        calc.enter(originalChecksum);
-        calc.enter(myChecksum);
-        return calc.getStandardDeviation();
-    }
-
-    /**
-     * Protect against HTTP Response Splitting
-     *
-     * @return
-     */
-    public static String cleanseUrlString(String input) {
-        return removeSpecialCharacters(decodeUrl(input));
-    }
-
-    public static String decodeUrl(String encodedUrl) {
-        try {
-            return encodedUrl == null ? null : URLDecoder.decode(encodedUrl, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            // this should not happen
-            e.printStackTrace();
-            return encodedUrl;
-        }
-    }
-
     public static String removeSpecialCharacters(String input) {
         if (input != null) {
             input = input.replaceAll("[ \\r\\n]", "");
@@ -69,34 +37,11 @@ public class StringUtil {
     }
 
     /**
-     * given a string with the format "fields[someFieldName].value" (very common in error validation), returns
-     * only "someFieldName
-     *
-     * @param expression
-     * @return
-     */
-    public static String extractFieldNameFromExpression(String expression) {
-        return expression.substring(expression.indexOf('[') + 1, expression.lastIndexOf(']'));
-    }
-
-    /**
      * @param text
      * @return
      */
     public static boolean isBlank(String text) {
         return (null == text || text.length() == 0);
-    }
-
-    /**
-     * String转Map
-     *
-     * @param mapString
-     * @return
-     */
-    public static Map transStringToMap(String mapString) {
-        JSONObject jasonObject = JSON.parseObject(mapString);
-        Map map = (Map) jasonObject;
-        return map;
     }
 
     private static final int PAD_LIMIT = 8192;

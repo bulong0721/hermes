@@ -1,6 +1,6 @@
 package com.hermes.core.dao;
 
-import com.hermes.core.util.GenericEntityUtils;
+import com.hermes.core.util.GenericEntityUtil;
 import com.hermes.core.GenericEntity;
 
 import javax.persistence.EntityManager;
@@ -21,7 +21,7 @@ public abstract class GenericEntityDaoImpl<K extends Serializable & Comparable<K
 
     @SuppressWarnings("unchecked")
     public GenericEntityDaoImpl() {
-        this.objectClass = (Class<E>) GenericEntityUtils.getGenericEntityClassFromComponentDefinition(getClass());
+        this.objectClass = (Class<E>) GenericEntityUtil.getGenericEntityClassFromComponentDefinition(getClass());
     }
 
     protected final Class<E> getObjectClass() {

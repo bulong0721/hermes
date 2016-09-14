@@ -1,7 +1,7 @@
-package com.hermes.admin.web.handler;
+package com.hermes.customer.web.handler;
 
-import com.hermes.admin.domain.AdminUser;
-import com.hermes.admin.service.AdminUserService;
+import com.hermes.customer.domain.Customer;
+import com.hermes.customer.service.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,25 +15,21 @@ import java.util.Date;
 /**
  * Created by Martin on 2016/4/18.
  */
-public class AdminAuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
+public class AuthenticationSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AdminAuthenticationSuccessHandler.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AuthenticationSuccessHandler.class);
 
     @Autowired
-    private AdminUserService userService;
+    private CustomerService customerService;
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
         // last access timestamp
         String userName = authentication.getName();
         try {
-            AdminUser user = userService.getByLogin(userName);
+            Customer user = customerService.getByUsername(userName);
 
-            user.setLoginIP(request.getRemoteAddr());
-            user.setLastLogin(new Date());
-
-            userService.update(user);
-            response.sendRedirect(request.getContextPath() + "/admin/home.html");
+            response.sendRedirect(request.getContextPath() + "/shop/home.html");
         } catch (Exception e) {
             LOGGER.error("User authenticationSuccess", e);
         }
