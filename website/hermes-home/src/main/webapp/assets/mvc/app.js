@@ -4,11 +4,11 @@
  */
 (function () {
     angular.module('inspinia', [
-        'ui.router',                    // Routing
-        'ngResource',                   // Resource
-        'oc.lazyLoad',                  // ocLazyLoad
-        'ui.bootstrap',                 // Ui Bootstrap
-        'ngSanitize'                    // ngSanitize
+        'ui.router',             // Routing
+        'ngResource',            // Resource
+        'oc.lazyLoad',           // ocLazyLoad
+        'ui.bootstrap',          // Ui Bootstrap
+        'ngSanitize',            // ngSanitize
+        'toaster',               //toaster
     ])
 })();
-

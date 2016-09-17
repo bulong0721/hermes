@@ -3,25 +3,23 @@
         <ul side-navigation class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="profile-element" uib-dropdown>
+                    <span><img class="logo" src=""/></span>
+                    <span class="clear"/>
+                    <span>{{main.shopName}}</span>
+                    <span class="clear"/>
                     <a uib-dropdown-toggle href>
-                        <span class="clear">
-                            <span class="block m-t-xs">
-                                <strong class="font-bold">{{main.userName}}</strong>
-                         </span>
-                            <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
-                        </span>
+                        <span class="text-muted text-xs block">{{main.userName}}<b class="caret"></b></span>
                     </a>
                     <ul uib-dropdown-menu="" class="animated fadeInRight m-t-xs">
-                        <li><a href="">Logout</a></li>
+                        <li><a href="j_spring_security_logout"><font color="black">Logout</font></a></li>
                     </ul>
                 </div>
-                <div class="logo-element">
-                    IN+
-                </div>
+                <div class="logo-element">IN+</div>
             </li>
 
             <li ng-class="{active: $state.includes('pkp')}">
-                <a href="pkp"><i class="fa fa-lg fa-shopping-cart"></i> <span class="nav-label">接送货管理</span> <span class="fa arrow"></span></a>
+                <a href="pkp"><i class="fa fa-lg fa-shopping-cart"></i> <span class="nav-label">接送货管理</span> <span
+                        class="fa arrow"></span></a>
                 <ul class="nav nav-second-level" ng-class="{in: $state.includes('pkp')}">
                     <li ui-sref-active="active"><a ui-sref="pkp.order">运单管理</a></li>
                     <li ui-sref-active="active"><a ui-sref="pkp.sign">派送签收</a></li>
@@ -29,7 +27,8 @@
             </li>
 
             <li ng-class="{active: $state.includes('tfr')}">
-                <a href="tfr"><i class="fa fa-lg fa-truck"></i> <span class="nav-label">运输中转</span> <span class="fa arrow"></span></a>
+                <a href="tfr"><i class="fa fa-lg fa-truck"></i> <span class="nav-label">运输中转</span> <span
+                        class="fa arrow"></span></a>
                 <ul class="nav nav-second-level" ng-class="{in: $state.includes('tfr')}">
                     <li ui-sref-active="active"><a ui-sref="pkp.order">装车配载</a></li>
                     <li ui-sref-active="active"><a ui-sref="pkp.order">发车管理</a></li>
@@ -39,7 +38,8 @@
             </li>
 
             <li ng-class="{active: $state.includes('stl')}">
-                <a href="stl"><i class="fa fa-lg fa-credit-card"></i> <span class="nav-label">财务结算</span> <span class="fa arrow"></span></a>
+                <a href="stl"><i class="fa fa-lg fa-credit-card"></i> <span class="nav-label">财务结算</span> <span
+                        class="fa arrow"></span></a>
                 <ul class="nav nav-second-level" ng-class="{in: $state.includes('stl')}">
                     <li ui-sref-active="active"><a ui-sref="bse.partner">对账管理</a></li>
                     <li ui-sref-active="active"><a ui-sref="bse.partner">现金管理</a></li>
@@ -47,7 +47,8 @@
             </li>
 
             <li ng-class="{active: $state.includes('bse')}">
-                <a href="bse"><i class="fa fa-lg fa-share-alt"></i> <span class="nav-label">营运综合</span> <span class="fa arrow"></span></a>
+                <a href="bse"><i class="fa fa-lg fa-share-alt"></i> <span class="nav-label">营运综合</span> <span
+                        class="fa arrow"></span></a>
                 <ul class="nav nav-second-level" ng-class="{in: $state.includes('bse')}">
                     <li ui-sref-active="active"><a ui-sref="bse.partner">客户管理</a></li>
                     <li ui-sref-active="active"><a ui-sref="bse.vehicle">车辆管理</a></li>
@@ -55,17 +56,10 @@
             </li>
 
             <li ng-class="{active: $state.includes('rpt')}">
-                <a href="rpt"><i class="fa fa-lg fa-bar-chart"></i> <span class="nav-label">报表分析</span> <span class="fa arrow"></span></a>
+                <a href="rpt"><i class="fa fa-lg fa-bar-chart"></i> <span class="nav-label">报表分析</span> <span
+                        class="fa arrow"></span></a>
                 <ul class="nav nav-second-level" ng-class="{in: $state.includes('rpt')}">
                     <li ui-sref-active="active"><a ui-sref="bse.partner">基础报表</a></li>
-                </ul>
-            </li>
-
-            <li ng-class="{active: $state.includes('sys')}">
-                <a href="sys"><i class="fa fa-lg fa-cog"></i> <span class="nav-label">系统管理</span> <span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level" ng-class="{in: $state.includes('sys')}">
-                    <li ui-sref-active="active"><a ui-sref="sys.user">用户管理</a></li>
-                    <li ui-sref-active="active"><a ui-sref="sys.role">权限管理</a></li>
                 </ul>
             </li>
         </ul>

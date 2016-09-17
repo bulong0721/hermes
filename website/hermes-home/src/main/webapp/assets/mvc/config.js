@@ -51,7 +51,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('pkp', {
             abstract: true,
             url: "/pkp",
-            templateUrl: "assets/mvc/desktop/view/content.html",
+            template: "<div ui-view></div>",
             data: {
                 pageTitle: '接送货管理'
             }
@@ -88,7 +88,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('tfr', {
             abstract: true,
             url: "/tfr",
-            templateUrl: "assets/mvc/desktop/view/content.html",
+            template: "<div ui-view></div>",
             data: {
                 pageTitle: '中转管理'
             }
@@ -96,7 +96,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('stl', {
             abstract: true,
             url: "/stl",
-            templateUrl: "assets/mvc/desktop/view/content.html",
+            template: "<div ui-view></div>",
             data: {
                 pageTitle: '结算管理'
             }
@@ -104,7 +104,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('bse', {
             abstract: true,
             url: "/bse",
-            templateUrl: "assets/mvc/desktop/view/content.html",
+            template: "<div ui-view></div>",
             data: {
                 pageTitle: '营运管理'
             }
@@ -141,7 +141,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('sys', {
             abstract: true,
             url: "/sys",
-            templateUrl: "assets/mvc/desktop/view/content.html",
+            template: "<div ui-view></div>",
             data: {
                 pageTitle: '系统管理'
             }

@@ -2,10 +2,10 @@ package com.hermes.web.admin.controller;
 
 import com.hermes.admin.domain.AdminUser;
 import com.hermes.admin.service.AdminUserService;
-import com.hermes.admin.service.RoleService;
 import com.hermes.core.util.ajax.AjaxPageableResponse;
 import com.hermes.core.util.ajax.AjaxResponse;
 import com.hermes.profile.domain.Role;
+import com.hermes.profile.service.RoleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

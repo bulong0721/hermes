@@ -24,7 +24,19 @@
 <body ng-controller="MainCtrl as main">
 
 <!-- Main view  -->
-<div ui-view></div>
+<div id="wrapper">
+    <!-- Navigation -->
+    <div ng-include="'assets/mvc/desktop/view/navigation.html'"></div>
+    <!-- Page wraper -->
+    <div id="page-wrapper" class="white-bg {{$state.current.name}}">
+        <!-- Page wrapper -->
+        <div ng-include="'assets/mvc/desktop/view/topnavbar.html'"></div>
+        <!-- Main view  -->
+        <div ui-view></div>
+        <!-- Footer -->
+        <div ng-include="'assets/mvc/desktop/view/footer.html'"></div>
+    </div>
+</div>
 
 <!-- jQuery and Bootstrap -->
 <script src="assets/plugins/jquery/jquery-2.1.1.min.js"></script>

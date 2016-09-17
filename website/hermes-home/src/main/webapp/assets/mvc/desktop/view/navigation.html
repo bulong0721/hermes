@@ -3,21 +3,18 @@
         <ul side-navigation class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="profile-element" uib-dropdown>
+                    <span><img class="logo" src=""/></span>
+                    <span class="clear"/>
+                    <span>{{main.shopName}}</span>
+                    <span class="clear"/>
                     <a uib-dropdown-toggle href>
-                        <span class="clear">
-                            <span class="block m-t-xs">
-                                <strong class="font-bold">{{main.userName}}</strong>
-                         </span>
-                            <span class="text-muted text-xs block">Example menu<b class="caret"></b></span>
-                        </span>
+                        <span class="text-muted text-xs block">{{main.userName}}<b class="caret"></b></span>
                     </a>
                     <ul uib-dropdown-menu="" class="animated fadeInRight m-t-xs">
-                        <li><a href="">Logout</a></li>
+                        <li><a href="j_spring_security_logout"><font color="black">Logout</font></a></li>
                     </ul>
                 </div>
-                <div class="logo-element">
-                    IN+
-                </div>
+                <div class="logo-element">IN+</div>
             </li>
 
             <li ng-class="{active: $state.includes('pkp')}">

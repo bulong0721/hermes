@@ -101,7 +101,6 @@
 
     <authentication-manager id="customerAuthenticationManager">
         <authentication-provider user-service-ref="customerDetailsService">
-            <password-encoder hash="sha"/>
         </authentication-provider>
     </authentication-manager>
 

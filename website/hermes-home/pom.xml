@@ -38,8 +38,11 @@
             <artifactId>aspectjweaver</artifactId>
             <version>1.5.4</version>
         </dependency>
-
-        <!-- Mysql Connector -->
+        <dependency>
+            <groupId>org.logback-extensions</groupId>
+            <artifactId>logback-ext-spring</artifactId>
+            <version>0.1.4</version>
+        </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -48,7 +51,6 @@
     </dependencies>
     <build>
         <finalName>hermes-home</finalName>
-
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
