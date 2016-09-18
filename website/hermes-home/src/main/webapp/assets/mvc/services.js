@@ -2,116 +2,76 @@
  * Created by Martin on 2016/4/12.
  */
 function constService($filter, $compile, $resource, $state, $q, NgTableParams) {
-    var vm = this, iDatatable = 0, iEditor = 1;
-    vm.initMgrCtrl = function (mgrOpts, scope) {
-        //初始化搜索配置
-        scope.where = {};
+    var vm = this;
 
-        //formly配置项
-        scope.formData = {
-            fields: mgrOpts.fields
-        };
+    //获取产品类型
+    vm.productOpts = [];
 
-        //formly返回
-        scope.goDataTable = function () {
-            scope.activeTab = iDatatable;
-        };
+    //从后台拿商户类型
+    vm.merchantType = [];
 
-        //提交成功预留
-        function saveFailed(response) {
-        }
+    //从后台拿商户菜系
+    vm.merchantCuisine = [];
 
-        //formly提交
-        scope.processSubmit = function () {
-            var formly = scope.formData;
-            if (formly.form.$valid) {
-                formly.options.updateInitialValue();
-                var xhr = $resource(mgrOpts.api.update);
-                xhr.save({}, formly.model).$promise.then(saveSuccess, saveFailed);
+    //切换门店
+    vm.thisMerchantStore = {};
+    vm.getSwitchMerchantStore = function () {
+        var deferred = $q.defer();
+        $resource('./merchantStore/getSwitch').get({}, function (resp) {
+            if (resp.rows.length > 0) {
+                $rootScope.storeInfo = vm.thisMerchantStore = resp.rows[0];
             }
-        };
-
-        //初始化配置tabs的show or hide
-        scope.activeTab = iDatatable;
-
-        //点击编辑
-        scope.goEditor = function (rowIndex) {
-            if (rowIndex > -1) {
-                var data = scope.tableOpts.data[rowIndex];
-                scope.formData.model = angular.copy(data);
-                scope.rowIndex = rowIndex;
-            } else {
-                scope.formData.model = {};
-                scope.rowIndex = -1;
-            }
-            scope.activeTab = iEditor;
-        };
-
-        //点击删除
-        scope.doDelete = function (rowIndex) {
-            cAlerts.confirm('确定删除?', function () {
-                //点击确定回调
-                if (mgrOpts.api.delete && rowIndex > -1) {
-                    var data = scope.tableOpts.data[rowIndex];
-                    $resource(mgrOpts.api.delete).save({}, data, function deleteSuccess(response) {
-                        if (0 != response.status) {
-                            return;
-                        }
-                        scope.tableOpts.data.splice(rowIndex, 1);//更新数据表
-                    }, saveFailed);
-                }
-            }, function () {
-                //点击取消回调
-            });
-
-        };
-
-        //增删改查后处理tables数据
-        function saveSuccess(response) {
-            if (0 != response.status) {
-                return;
-            }
-            var data = response.dataMap.updateResult;//scope.formData.model;//response.rows[0].updateResult;//
-
-            if (scope.rowIndex < 0) {
-                //scope.tableOpts.data.unshift(data);
-                scope.tableOpts.data.splice(0, 0, data);
-            } else {
-                scope.tableOpts.data.splice(scope.rowIndex, 1, data);
-            }
-            scope.goDataTable();
-        }
-
-        //tables获取数据
-        scope.tableOpts = new NgTableParams({}, {
-            counts: [],
-            getData: function (params) {
-                if (!scope.loadByInit) {
-                    return [];
-                }
-                var xhr = $resource(mgrOpts.api.read);
-                var args = angular.extend(params.url(), scope.where);
-
-                return xhr.get(args).$promise.then(function (data) {
-                    params.total(data.recordsTotal);
-                    return data.rows ? data.rows : [];
-                });
-            }
+            deferred.resolve(vm.thisMerchantStore);
         });
+        return deferred.promise;
+    }
 
-        //搜索tables的数据
-        scope.search = function () {
-            scope.loadByInit = true;
-            scope.tableOpts.page(1);
-            scope.tableOpts.reload();
-        };
-    };
+    //从后台拿到省列表
+    vm.provinces = [];
+
+    //根据省从后台拿市列表
+    vm.citys = [];
+    vm.getCitysByProvince = function (provinceId) {
+        if (provinceId) {
+            $resource('./city/listByProvince').get({id: provinceId}, function (resp) {
+                var length = resp.rows.length;
+                if (length > 0) {
+                    vm.citys.splice(0, vm.citys.length);
+                    for (var j = 0; j < length; j++) {
+                        vm.citys.push({name: resp.rows[j].name, value: resp.rows[j].id});
+                    }
+                }
+            });
+        }
+    }
+
+    //根据市从后台拿区县列表
+    vm.districts = [];
+    vm.getDistrictsByCity = function (cityId) {
+        if (cityId) {
+            $resource('./district/listByCity').get({id: cityId}, function (resp) {
+                var length = resp.rows.length;
+                if (length > 0) {
+                    vm.districts.splice(0, vm.districts.length);
+                    for (var j = 0; j < length; j++) {
+                        vm.districts.push({name: resp.rows[j].name, value: resp.rows[j].id});
+                    }
+                }
+            });
+        }
+    }
+
+    //根据区县拿商圈
+    vm.circles = [];
+
+    //根据商圈拿商场
+    vm.malls = [];
 }
 
 /**
  * cTables
  * */
-function tablesService($resource, NgTableParams, cAlerts, toaster) {
+function tablesService($resource, NgTableParams, $alert, toaster) {
     var vm = this, iDatatable = 0, iEditor = 1;
 
     vm.initNgMgrCtrl = function (mgrOpts, scope) {
@@ -186,7 +146,7 @@ function tablesService($resource, NgTableParams, cAlerts, toaster) {
 
         //点击删除
         scope.doDelete = function (rowIndex) {
-            cAlerts.confirm('确定删除?', function () {
+            $alert.confirm('确定删除?', function () {
                 //点击确定回调
                 if (mgrOpts.api.delete && rowIndex > -1) {
                     var data = scope.tableOpts.data[rowIndex];
@@ -257,7 +217,7 @@ function tablesService($resource, NgTableParams, cAlerts, toaster) {
 /*
  * cfromly
  * */
-function fromlyService(formlyConfig, $window, $q, toaster, $filter, $timeout, formlyValidationMessages, uploads) {
+function fromsService(formlyConfig, $window, $q, toaster, $filter, $timeout, formlyValidationMessages) {
     formlyConfig.extras.errorExistsAndShouldBeVisibleExpression = 'fc.$touched || form.$submitted';
     formlyValidationMessages.addStringMessage('required', '此字段必填');
 
@@ -426,15 +386,15 @@ function fromlyService(formlyConfig, $window, $q, toaster, $filter, $timeout, fo
 
                         //type{2:线上3:七牛4:(2+3)}
                         switch (t.upType) {
-                            case 2:
-                                ajaxAll = [uploads.myeeUpload(fd, t, progress)];
-                                break;
-                            case 3:
-                                ajaxAll = [uploads.qnUpload(file, progress)];
-                                break;
-                            case 4:
-                                ajaxAll = [uploads.qnUpload(file, progress), uploads.myeeUpload(fd, t, progress)];
-                                break;
+                            // case 2:
+                            //     ajaxAll = [$upload.myeeUpload(fd, t, progress)];
+                            //     break;
+                            // case 3:
+                            //     ajaxAll = [$upload.qnUpload(file, progress)];
+                            //     break;
+                            // case 4:
+                            //     ajaxAll = [$upload.qnUpload(file, progress), $upload.myeeUpload(fd, t, progress)];
+                            //     break;
                             default:
                                 ajaxAll = null;
                         }
@@ -545,7 +505,7 @@ function fromlyService(formlyConfig, $window, $q, toaster, $filter, $timeout, fo
 }
 
 /*
- * cAlerts
+ * $alert
  * */
 function alertService($uibModal) {
     return {
@@ -571,7 +531,7 @@ function alertService($uibModal) {
 }
 
 /*
- * uploads
+ * $upload
  * */
 function uploadService($qupload, $resource) {
     var token = $resource('./superman/picture/tokenAndKey').get();
@@ -609,8 +569,8 @@ function uploadService($qupload, $resource) {
 
 angular
     .module('inspinia')
-    .service('$manager', constService)
+    .service('$constant', constService)
     .service('$ngTable', tablesService)
-    .service('$formly', fromlyService)
+    .service('$ngForms', fromsService)
     .factory('$upload', uploadService)
     .factory('$alert', alertService);

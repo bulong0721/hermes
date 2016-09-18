@@ -7,9 +7,9 @@ angular.module('pkp', [])
 /**
  * orderMgrCtrl - controller
  */
-orderMgrCtrl.$inject = ['$scope', 'Constants', 'Formly'];
+orderMgrCtrl.$inject = ['$scope', '$ngTable', '$ngForms'];
 
-function orderMgrCtrl($scope, Constants, Formly) {
+function orderMgrCtrl($scope, $ngTable, $ngForms) {
     var mgrOpts = {
         fields: [
             {
@@ -110,5 +110,5 @@ function orderMgrCtrl($scope, Constants, Formly) {
         }
     };
 
-    Constants.initMgrCtrl(mgrOpts, $scope);
+    $ngTable.initNgMgrCtrl(mgrOpts, $scope);
 }

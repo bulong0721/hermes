@@ -7,9 +7,9 @@ angular.module('bse', [])
 /**
  * partnerMgrCtrl - controller
  */
-partnerMgrCtrl.$inject = ['$scope', 'Constants', 'Formly'];
+partnerMgrCtrl.$inject = ['$scope', '$ngTable', '$ngForms'];
 
-function partnerMgrCtrl($scope, Constants, Formly) {
+function partnerMgrCtrl($scope, $ngTable, $ngForms) {
     var mgrOpts = {
         fields: [
             {
@@ -25,5 +25,5 @@ function partnerMgrCtrl($scope, Constants, Formly) {
         }
     };
 
-    Constants.initMgrCtrl(mgrOpts, $scope);
+    $ngTable.initNgMgrCtrl(mgrOpts, $scope);
 }

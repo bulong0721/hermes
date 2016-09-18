@@ -7,9 +7,9 @@ angular.module('tfr', [])
 /**
  * roleCtrl - controller
  */
-outSourceCtrl.$inject = ['$scope', '$resource', 'Constants'];
+outSourceCtrl.$inject = ['$scope', '$resource', '$ngTable', '$ngForms'];
 
-function outSourceCtrl($scope, $resource, Constants) {
+function outSourceCtrl($scope, $resource, $ngTable, $ngForms) {
     var mgrData = {
         fields: [
             {'key': 'name', 'type': 'input', 'templateOptions': {'label': '昵称', required: true, 'placeholder': '昵称'}},
@@ -32,5 +32,5 @@ function outSourceCtrl($scope, $resource, Constants) {
         }
     };
 
-    Constants.initMgrCtrl(mgrData, $scope);
+    $ngTable.initNgMgrCtrl(mgrData, $scope);
 }

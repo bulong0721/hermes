@@ -7,24 +7,24 @@ angular.module('sys', [])
 /**
  * roleCtrl - controller
  */
-userMgrCtrl.$inject = ['$scope', '$resource', 'Constants'];
+userMgrCtrl.$inject = ['$scope', '$resource', '$ngTable', '$ngForms'];
 
-function userMgrCtrl($scope, $resource, Constants) {
+function userMgrCtrl($scope, $resource, $ngTable, $ngForms) {
     var mgrData = {
         fields: [
-            {'key': 'name', 'type': 'input', 'templateOptions': {'label': '昵称', required: true, 'placeholder': '昵称'}},
+            {'key': 'name', 'type': 'c_input', 'templateOptions': {'label': '昵称', required: true, 'placeholder': '昵称'}},
             {
                 'key': 'login',
-                'type': 'input',
+                'type': 'c_input',
                 'templateOptions': {'label': '登录名', required: true, 'placeholder': '登录名'}
             },
-            {'key': 'phoneNumber', 'type': 'input', 'templateOptions': {'label': '电话号码', 'placeholder': '电话号码'}},
+            {'key': 'phoneNumber', 'type': 'c_input', 'templateOptions': {'label': '电话号码', 'placeholder': '电话号码'}},
             {
                 'key': 'email',
-                'type': 'input',
+                'type': 'c_input',
                 'templateOptions': {type: 'email', 'label': '电子邮件', required: true, 'placeholder': '电子邮件'}
             },
-            {'key': 'activeStatusFlag', 'type': 'checkbox', 'templateOptions': {'label': '状态', 'placeholder': '状态'}}
+            {'key': 'activeStatusFlag', 'type': 'c_checkbox', 'templateOptions': {'label': '状态', 'placeholder': '状态'}}
         ],
         api: {
             read: '/admin/users/paging',
@@ -32,5 +32,5 @@ function userMgrCtrl($scope, $resource, Constants) {
         }
     };
 
-    Constants.initMgrCtrl(mgrData, $scope);
+    $ngTable.initNgMgrCtrl(mgrData, $scope);
 }

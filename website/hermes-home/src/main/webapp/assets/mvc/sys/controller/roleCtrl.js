@@ -7,9 +7,9 @@ angular.module('sys', [])
 /**
  * roleCtrl - controller
  */
-roleMgrCtrl.$inject = ['$scope', 'Constants'];
+roleMgrCtrl.$inject = ['$scope', '$ngTable', '$ngForms'];
 
-function roleMgrCtrl($scope, Constants) {
+function roleMgrCtrl($scope, $ngTable, $ngForms) {
     var mgrOpts = {
         fields: [
             {
@@ -25,5 +25,5 @@ function roleMgrCtrl($scope, Constants) {
         }
     };
 
-    Constants.initMgrCtrl(mgrOpts, $scope);
+    $ngTable.initNgMgrCtrl(mgrOpts, $scope);
 }

@@ -7,9 +7,9 @@ angular.module('bse', [])
 /**
  * vehicleMgrCtrl - controller
  */
-vehicleMgrCtrl.$inject = ['$scope', 'Constants', 'Formly'];
+vehicleMgrCtrl.$inject = ['$scope', '$ngTable', '$ngForms'];
 
-function vehicleMgrCtrl($scope, Constants, Formly) {
+function vehicleMgrCtrl($scope, $ngTable, $ngForms) {
     var mgrOpts = {
         fields: [
             {key: 'nature', type: 'c_select', templateOptions: {label: '性质', placeholder: '性质'}},
@@ -29,5 +29,5 @@ function vehicleMgrCtrl($scope, Constants, Formly) {
         }
     };
 
-    Constants.initMgrCtrl(mgrOpts, $scope);
+    $ngTable.initNgMgrCtrl(mgrOpts, $scope);
 }

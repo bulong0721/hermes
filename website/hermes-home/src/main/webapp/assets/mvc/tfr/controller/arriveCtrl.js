@@ -7,9 +7,9 @@ angular.module('tfr', [])
 /**
  * roleCtrl - controller
  */
-arriveCtrl.$inject = ['$scope', '$resource', 'Constants'];
+arriveCtrl.$inject = ['$scope', '$resource', '$ngTable', '$ngForms'];
 
-function arriveCtrl($scope, $resource, Constants) {
+function arriveCtrl($scope, $resource, $ngTable, $ngForms) {
     var mgrData = {
         fields: [
             {'key': 'name', 'type': 'input', 'templateOptions': {'label': '昵称', required: true, 'placeholder': '昵称'}},
@@ -32,5 +32,5 @@ function arriveCtrl($scope, $resource, Constants) {
         }
     };
 
-    Constants.initMgrCtrl(mgrData, $scope);
+    $ngTable.initNgMgrCtrl(mgrData, $scope);
 }

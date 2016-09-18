@@ -235,14 +235,14 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
         .state('sys.client', {
             url: "/client",
             templateUrl: "assets/mvc/desktop/view/manager.html",
-            controller: 'userMgrCtrl',
+            controller: 'clientCtrl',
             data: {
                 subTitle: '编辑资料',
-                datatable: 'assets/mvc/sys/view/client_editor.html',
+                datatable: 'assets/mvc/sys/view/client_datatable.html',
             },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
-                    return controllerLoader($ocLazyLoad, 'sys', 'userCtrl.js')
+                    return controllerLoader($ocLazyLoad, 'sys', 'clientCtrl.js')
                 }
             }
         })
