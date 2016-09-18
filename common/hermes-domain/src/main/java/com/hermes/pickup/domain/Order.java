@@ -41,7 +41,7 @@ public class Order extends GenericEntity<Long, Order> {
 
     @ManyToOne(targetEntity = Org.class, optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "ARRIVAL_ORG_ID", referencedColumnName = "ORG_ID")
-    private Long arrivalOrg;
+    private Org arrivalOrg;
 
     @ManyToOne(targetEntity = Customer.class, optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "USER1_ID", referencedColumnName = "CUSTOMER_ID")
@@ -186,11 +186,11 @@ public class Order extends GenericEntity<Long, Order> {
         this.departureOrg = departureOrg;
     }
 
-    public Long getArrivalOrg() {
+    public Org getArrivalOrg() {
         return arrivalOrg;
     }
 
-    public void setArrivalOrg(Long arrivalOrg) {
+    public void setArrivalOrg(Org arrivalOrg) {
         this.arrivalOrg = arrivalOrg;
     }
 
