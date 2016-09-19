@@ -99,7 +99,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             controller: 'orderMgrCtrl',
             data: {
                 subTitle: '装车配载',
-                datatable: 'assets/mvc/pkp/view/load_datatable.html'
+                datatable: 'assets/mvc/tfr/view/load_datatable.html'
             },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -113,7 +113,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             controller: 'orderMgrCtrl',
             data: {
                 subTitle: '发车管理',
-                datatable: 'assets/mvc/pkp/view/load_datatable.html'
+                datatable: 'assets/mvc/tfr/view/depart_datatable.html'
             },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -127,7 +127,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             controller: 'orderMgrCtrl',
             data: {
                 subTitle: '到达入库',
-                datatable: 'assets/mvc/pkp/view/arrive_datatable.html'
+                datatable: 'assets/mvc/tfr/view/arrive_datatable.html'
             },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
@@ -141,7 +141,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             controller: 'orderMgrCtrl',
             data: {
                 subTitle: '中转外包',
-                datatable: 'assets/mvc/pkp/view/outsource_datatable.html'
+                datatable: 'assets/mvc/tfr/view/outsource_datatable.html'
             },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {

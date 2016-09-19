@@ -471,7 +471,7 @@ body.top-navigation.fixed-nav #wrapper #page-wrapper {
 }
 
 body.fixed-nav.fixed-nav-basic .navbar-fixed-top {
-    left: 230px;
+    left: 220px;
 }
 
 body.fixed-nav.fixed-nav-basic.mini-navbar .navbar-fixed-top {
@@ -491,7 +491,7 @@ body.fixed-nav.fixed-nav-basic.body-small .navbar-fixed-top {
 }
 
 body.fixed-nav.fixed-nav-basic.fixed-sidebar.mini-navbar.body-small .navbar-fixed-top {
-    left: 230px;
+    left: 220px;
 }
 
 .fixed-nav .minimalize-styl-2 {
@@ -558,7 +558,7 @@ body.canvas-menu.mini-navbar .footer {
 body.fixed-sidebar .navbar-static-side,
 body.canvas-menu .navbar-static-side {
     position: fixed;
-    width: 230px;
+    width: 220px;
     z-index: 2001;
     height: 100%;
 }
@@ -572,11 +572,11 @@ body.fixed-sidebar.mini-navbar #page-wrapper {
 }
 
 body.body-small.fixed-sidebar.mini-navbar #page-wrapper {
-    margin: 0 0 0 230px;
+    margin: 0 0 0 220px;
 }
 
 body.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
-    width: 230px;
+    width: 220px;
 }
 
 .fixed-sidebar.mini-navbar .nav li:focus > .nav-second-level,
@@ -648,7 +648,7 @@ body.canvas-menu nav.navbar-static-side {
 
 body.canvas-menu.mini-navbar nav.navbar-static-side {
     display: block;
-    width: 230px;
+    width: 220px;
 }
 
 .top-navigation #page-wrapper {
@@ -3838,7 +3838,7 @@ body.tour-open .animated {
 }
 
 .sidebard-panel {
-    width: 230px;
+    width: 220px;
     background: #ebebed;
     padding: 10px 20px;
     position: absolute;
@@ -4268,7 +4268,7 @@ ol.unstyled {
     padding: 10px 20px;
     background: white;
     border-top: 1px solid #e7eaec;
-    margin-left: 230px;
+    margin-left: 220px;
 }
 
 body.mini-navbar .footer.fixed,
@@ -4282,7 +4282,7 @@ body.canvas-menu .footer.fixed {
 }
 
 body.fixed-sidebar.body-small.mini-navbar .footer.fixed {
-    margin: 0 0 0 230px;
+    margin: 0 0 0 220px;
 }
 
 body.body-small .footer.fixed {
@@ -5673,7 +5673,7 @@ ul.notes li div {
 /* FILE MANAGER */
 .file-box {
     float: left;
-    width: 230px;
+    width: 220px;
 }
 
 .file-manager h5 {
@@ -8618,7 +8618,7 @@ body.rtls {
 }
 
 body.rtls #page-wrapper {
-    margin: 0 230px 0 0;
+    margin: 0 220px 0 0;
 }
 
 body.rtls .nav-second-level li a {
@@ -8744,7 +8744,7 @@ body.rtls .dd-item > button {
 }
 
 body.rtls .theme-config-box {
-    margin-left: -230px;
+    margin-left: -220px;
     margin-right: 0;
 }
 
@@ -8768,7 +8768,7 @@ body.rtls .skin-setttings {
 }
 
 body.rtls .footer.fixed {
-    margin-right: 230px;
+    margin-right: 220px;
     margin-left: 0;
 }
 
@@ -8812,11 +8812,11 @@ body.rtls.mini-navbar.fixed-sidebar #page-wrapper {
 }
 
 body.rtls.body-small.fixed-sidebar.mini-navbar #page-wrapper {
-    margin: 0 230px 0 0;
+    margin: 0 220px 0 0;
 }
 
 body.rtls.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
-    width: 230px;
+    width: 220px;
 }
 
 .body-small.rtls .navbar-fixed-top {
@@ -8868,7 +8868,7 @@ body.rtls.top-navigation .footer.fixed {
         display: none;
         z-index: 2001;
         position: fixed;
-        width: 230px;
+        width: 220px;
     }
 
     .rtls.fixed-sidebar.body-small.mini-navbar .navbar-static-side {
@@ -8909,7 +8909,7 @@ body.rtls.top-navigation .footer.fixed {
 }
 
 .theme-config-box {
-    margin-right: -230px;
+    margin-right: -220px;
     position: relative;
     z-index: 2000;
     transition-duration: 0.8s;
@@ -8933,7 +8933,7 @@ body.rtls.top-navigation .footer.fixed {
 }
 
 .skin-setttings {
-    width: 230px;
+    width: 220px;
     margin-left: 40px;
     background: #f3f3f4;
 }
@@ -9846,7 +9846,7 @@ body.md-skin {
 }
 
 .md-skin.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
-    width: 230px;
+    width: 220px;
     background-color: #ffffff;
 }
 
@@ -9861,14 +9861,14 @@ body.md-skin {
 @media (min-width: 768px) {
     #page-wrapper {
         position: inherit;
-        margin: 0 0 0 230px;
+        margin: 0 0 0 220px;
         min-height: 1200px;
     }
 
     .navbar-static-side {
         z-index: 2001;
         position: absolute;
-        width: 230px;
+        width: 220px;
     }
 
     .navbar-top-links .dropdown-messages,
@@ -9925,7 +9925,7 @@ body.md-skin {
         display: none;
         z-index: 2001;
         position: fixed;
-        width: 230px;
+        width: 220px;
     }
 
     .fixed-sidebar.body-small.mini-navbar .navbar-static-side {
@@ -10107,6 +10107,7 @@ th.center, td.center {
 
 /*/!*====================================new style====================================*!/*/
 address {margin: 0}
+::-webkit-scrollbar-track{background-color:#F5F5F5}::-webkit-scrollbar{width:6px;background-color:#F5F5F5}::-webkit-scrollbar-thumb{background-color:#999}
 /*nav top logo*/
 .profile-element {color: #fff; display: inline-block; text-align: center;}
 .profile-element .logo {border-radius: 50%; width: 60px; height: 60px}
@@ -10118,6 +10119,8 @@ address {margin: 0}
 
 /*table tr[]*/
 table tr:hover,table>tbody>tr:nth-of-type(odd):hover {background-color: #f6fefc;}
+.tableXyAuto {overflow-x: auto;}
+.tableXyAuto td,.tableXyAuto tr {white-space:nowrap;}
 /*.wrapper-content {padding: 15px 0px 20px;}*/
 .navbar {
     position: inherit;
@@ -10388,7 +10391,7 @@ table tr:hover,table>tbody>tr:nth-of-type(odd):hover {background-color: #f6fefc;
     display: block;
     padding: 6px 0 0 0;
     position: fixed;
-    width: 230px;
+    width: 220px;
     background: #2A3F54
 }
 
