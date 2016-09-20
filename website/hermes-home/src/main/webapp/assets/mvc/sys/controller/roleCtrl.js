@@ -10,7 +10,7 @@ angular.module('sys', [])
 roleMgrCtrl.$inject = ['$scope', '$ngTable', '$ngForms'];
 
 function roleMgrCtrl($scope, $ngTable, $ngForms) {
-    var mgrOpts = {
+    var option = {
         fields: [
             {
                 'key': 'roleName',
@@ -20,10 +20,10 @@ function roleMgrCtrl($scope, $ngTable, $ngForms) {
             {'key': 'description', 'type': 'input', 'templateOptions': {'label': '描述', 'placeholder': '描述'}}
         ],
         api: {
-            read: '/admin/roles/paging',
-            update: '/admin/roles/save'
+            read: 'roles/paging',
+            update: 'roles/save'
         }
     };
 
-    $ngTable.initNgMgrCtrl(mgrOpts, $scope);
+    $ngTable.initNgMgrCtrl(option, $scope);
 }

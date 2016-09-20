@@ -25,8 +25,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td colspan="6" class="center" ng-if="$data.length<=0">没有查找到数据</td>
+                <tr ng-if="$data.length<=0">
+                    <td colspan="6" class="center">没有查找到数据</td>
                 </tr>
                 <tr class="center" ng-repeat="row in $data" >
                     <td class="center">{{::row.name}}</td>

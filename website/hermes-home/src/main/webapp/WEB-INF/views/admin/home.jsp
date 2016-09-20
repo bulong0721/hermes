@@ -9,7 +9,7 @@
     <!-- Page title set in pageTitle directive -->
     <title page-title></title>
     <!-- Font awesome -->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstrap and Fonts -->
     <link href="assets/plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- toastr css -->
@@ -40,7 +40,7 @@
 
 <!-- jQuery and Bootstrap -->
 <script src="assets/plugins/jquery/jquery-2.1.1.min.js"></script>
-<script src="assets/plugins/jquery-ui/jquery-ui.js"></script>
+<script src="assets/plugins/jquery-ui/jquery-ui.min.js"></script>
 <script src="assets/plugins/bootstrap/bootstrap.min.js"></script>
 <script src="assets/plugins/metisMenu/jquery.metisMenu.js"></script>
 <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>

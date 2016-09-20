@@ -73,8 +73,8 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td colspan="54" class="center" ng-if="$data.length<=0">没有查找到数据</td>
+                <tr ng-if="$data.length<=0">
+                    <td colspan="54" class="center">没有查找到数据</td>
                 </tr>
                 <tr ng-repeat="row in $data">
                     <td class="center">

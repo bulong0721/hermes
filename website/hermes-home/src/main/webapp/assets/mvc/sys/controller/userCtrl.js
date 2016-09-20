@@ -10,7 +10,7 @@ angular.module('sys', [])
 userMgrCtrl.$inject = ['$scope', '$resource', '$ngTable', '$ngForms'];
 
 function userMgrCtrl($scope, $resource, $ngTable, $ngForms) {
-    var mgrData = {
+    var option = {
         fields: [
             {'key': 'name', 'type': 'c_input', 'templateOptions': {'label': '昵称', required: true, 'placeholder': '昵称'}},
             {
@@ -27,10 +27,10 @@ function userMgrCtrl($scope, $resource, $ngTable, $ngForms) {
             {'key': 'activeStatusFlag', 'type': 'c_checkbox', 'templateOptions': {'label': '状态', 'placeholder': '状态'}}
         ],
         api: {
-            read: '/admin/users/paging',
-            update: '/admin/users/save'
+            read: 'users/paging',
+            update: 'users/save'
         }
     };
 
-    $ngTable.initNgMgrCtrl(mgrData, $scope);
+    $ngTable.initNgMgrCtrl(option, $scope);
 }

@@ -25,6 +25,7 @@ import java.util.Map;
  * Created by Martin on 2016/4/21.
  */
 @Controller
+@RequestMapping(value = {"admin", "shop"})
 public class UserController {
     private static final Logger LOGGER           = LoggerFactory.getLogger(UserController.class);
     private static final String DEFAULT_PASSWORD = "123456";
@@ -35,7 +36,7 @@ public class UserController {
     @Autowired
     private RoleService roleService;
 
-    @RequestMapping(value = "/admin/users/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/users/save", method = RequestMethod.POST)
     @ResponseBody
     public AjaxResponse addUser(@RequestBody AdminUser user, HttpServletRequest request) throws Exception {
         if (null != user.getId()) {
@@ -53,7 +54,7 @@ public class UserController {
         return AjaxResponse.success();
     }
 
-    @RequestMapping(value = "/admin/users/paging", method = RequestMethod.GET)
+    @RequestMapping(value = "/users/paging", method = RequestMethod.GET)
     public
     @ResponseBody
     AjaxPageableResponse pageUsers(Model model, HttpServletRequest request) {
@@ -74,7 +75,7 @@ public class UserController {
         return resp;
     }
 
-    @RequestMapping(value = "/admin/roles/paging", method = RequestMethod.GET)
+    @RequestMapping(value = "/roles/paging", method = RequestMethod.GET)
     public
     @ResponseBody
     AjaxPageableResponse pageRoles(Model model, HttpServletRequest request) {
@@ -90,7 +91,7 @@ public class UserController {
         return resp;
     }
 
-    @RequestMapping(value = "/admin/roles/save", method = RequestMethod.POST)
+    @RequestMapping(value = "/roles/save", method = RequestMethod.POST)
     @ResponseBody
     public AjaxResponse mergeRole(@Valid @RequestBody Role role, HttpServletRequest request) throws Exception {
         roleService.update(role);
