@@ -512,7 +512,15 @@ function alertService($uibModal) {
         confirm: function (titile, ok, cancel) {
             $uibModal.open({
                 animation: false,
-                template: '<alerts data-title="' + titile + '"></alerts>',
+                template: [
+                    '<div class="modal-header">',
+                    '<h4 class="modal-title">{{title}}</h4>',
+                    '</div>',
+                    '<div class="modal-footer">',
+                    '<button class="btn-xs btn-primary" type="button" ng-click="ok()">确定</button>',
+                    '<button class="btn-xs btn-warning" type="button" ng-click="cancel()">取消</button>',
+                    '</div>'
+                ].join(''),
                 controller: function ($scope, $uibModalInstance) {
                     $scope.ok = function () {
                         $uibModalInstance.close();

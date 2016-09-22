@@ -30,7 +30,7 @@ function controllerLoader(oclazyload, dir, ctrl) {
         {
             serie: true,
             name: 'treeGrid',
-            files: ['assets/plugins/ui-tree/angular-tree-grid.css', 'assets/plugins/ui-tree/angular-tree-grid.js']
+            files: ['assets/plugins/ui-tree/angular-tree-grid.css', 'assets/plugins/ui-tree/angular-tree-grid.js', 'assets/plugins/bootstrap/bootstrap-table.css']
         },
         {
             name: dir,//属于哪个模块
