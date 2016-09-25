@@ -1,15 +1,30 @@
-<div class="row wrapper border-bottom gray-bg page-heading">
+<div class="row wrapper border-bottom gray-bg">
+<div class="breadcrumbs ace-save-state">
     <div class="col-sm-10">
-        <h2>
-            {{$state.current.data.pageTitle}}
-            <small>
-                <i class="fa fa-angle-double-right"></i>
-                {{$state.current.data.subTitle}}
-            </small>
-        </h2>
+        <ul class="breadcrumb">
+            <li>
+                <button class="btn btn-xs btn-primary" type="button" ng-click="minimalize()"><i
+                        class="fa fa-bars"></i></button>
+                <a href="#">{{$state.current.data.pageTitle}}</a>
+            </li>
+            <li>
+                <a href="#">{{$state.current.data.subTitle}}</a>
+            </li>
+        </ul>
     </div>
     <div class="col-lg-2">
+        <div class="nav-search navbar-right">
+            <form class="form-search">
+                <span class="input-icon">
+                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input"
+                           autocomplete="off">
+                    <i class="ace-icon fa fa-search nav-search-icon"></i>
+                </span>
+            </form>
+        </div>
     </div>
+</div>
+
 </div>
 <div class="wrapper wrapper-content">
     <uib-tabset type="bareheaded" active="activeTab">
