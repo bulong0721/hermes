@@ -48,7 +48,7 @@ h5 {
     /*color: #a7b1c2;*/
     color: rgba(255, 255, 255, 0.75);
     /*font-weight: 600;*/
-    padding: 14px 20px 14px 25px;
+    padding: 10px 20px 10px 25px;
 }
 
 .nav.navbar-right > li > a {
@@ -299,7 +299,7 @@ h5 {
 
 .minimalize-styl-2 {
     padding: 4px 12px;
-    margin: 14px 5px 5px 20px;
+    margin: 10px 5px 5px 20px;
     font-size: 14px;
     float: left;
 }
@@ -4562,21 +4562,21 @@ code {
     border-color: #e7eaec;
     border-image: none;
     border-style: solid solid none;
-    border-width: 3px 0 0;
+    border-width: 3px 1px;
     color: inherit;
     margin-bottom: 0;
-    padding: 14px 15px 7px;
-    min-height: 48px;
+    padding: 5px 5px 2px 5px;
+    min-height: 40px;
 }
 
 .ibox-content {
     background-color: #ffffff;
     color: inherit;
-    padding: 15px 20px 20px 20px;
+    padding: 5px 5px 35px 5px;
     border-color: #e7eaec;
     border-image: none;
-    border-style: solid solid none;
-    border-width: 1px 0;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .ibox-footer {
@@ -10250,11 +10250,12 @@ table tr:hover, table > tbody > tr:nth-of-type(odd):hover {
 }
 
 .formly .formly-field {
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .formly .formly-field .form-group {
     overflow: hidden;
+    margin-bottom: 5px !important;
 }
 
 .formly .formly-field label {
@@ -10617,37 +10618,13 @@ table tr:hover, table > tbody > tr:nth-of-type(odd):hover {
     color: #ff892a !important;
 }
 
-.user-info {
-    max-width: 150px;
-    display: inline-block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    text-align: left;
-    vertical-align: top;
-    line-height: 15px;
-    position: relative;
-    top: 6px;
-}
-
 .breadcrumbs {
     position: relative;
     z-index: auto;
-    border-bottom: 1px solid #E5E5E5;
     background-color: #F5F5F5;
-    min-height: 41px;
+    min-height: 40px;
     line-height: 40px;
-    padding: 0 12px 0 0;
-}
-
-.breadcrumb {
-    background-color: transparent;
-    line-height: 20px;
-    margin: 6px 22px 0 12px;
-    padding: 0;
-    font-size: 13px;
-    color: #333;
-    border-radius: 0;
+    padding: 0 10px 0 0;
 }
 
 .breadcrumbs .nav-search {
@@ -10663,13 +10640,13 @@ table tr:hover, table > tbody > tr:nth-of-type(odd):hover {
 .nav-search .nav-search-input {
     border: 1px solid #6FB3E0;
     width: 152px;
-    height: 28px!important;
+    height: 28px !important;
     padding-top: 2px;
     padding-bottom: 2px;
-    border-radius: 4px!important;
+    border-radius: 4px !important;
     font-size: 13px;
     line-height: 1.3;
-    color: #666!important;
+    color: #666 !important;
     z-index: 11;
     -webkit-transition: width ease .15s;
     -o-transition: width ease .15s;
@@ -10677,9 +10654,9 @@ table tr:hover, table > tbody > tr:nth-of-type(odd):hover {
 }
 
 .nav-search .nav-search-icon {
-    color: #6FB3E0!important;
-    font-size: 14px!important;
-    line-height: 24px!important;
+    color: #6FB3E0 !important;
+    font-size: 14px !important;
+    line-height: 24px !important;
     background-color: transparent;
 }
 
@@ -10688,16 +10665,15 @@ form {
     margin-top: 0em;
 }
 
-.input-icon>input {
+.input-icon > input {
     padding-left: 24px;
-    padding-right: 6px;
 }
 
 .ace-icon {
     text-align: center;
 }
 
-.input-icon>.ace-icon {
+.input-icon > .ace-icon {
     padding: 0 3px;
     z-index: 2;
     position: absolute;
@@ -10710,27 +10686,31 @@ form {
     font-size: 16px;
 }
 
-input, textarea, keygen, select, button {
-    text-rendering: auto;
-    color: initial;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    margin: 0em 0em 0em 0em;
-    font: 13.3333px Arial;
-}
-
-input, textarea, keygen, select, button, meter, progress {
-    -webkit-writing-mode: horizontal-tb;
-}
-
 span.input-icon {
     display: inline-block;
 }
+
 .input-icon {
     position: relative;
+}
+
+.topbar-link {
+    padding: 15px 0px 0px 5px !important;
+}
+
+.topbar-link-lines {
+    padding: 5px 0px 0px 5px !important;
+}
+
+.user-info {
+    max-width: 150px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: left;
+    vertical-align: top;
+    line-height: 15px;
+    position: relative;
+    top: 6px;
 }

@@ -5,10 +5,10 @@
                 <div class="profile-element" uib-dropdown>
                     <span><img class="logo" src=""/></span>
                     <span class="clear"/>
-                    <span>{{main.shopName}}</span>
+                    <span>{{::main.shopName}}</span>
                     <span class="clear"/>
                     <a uib-dropdown-toggle href>
-                        <span class="text-muted text-xs block">{{main.userName}}<b class="caret"></b></span>
+                        <span class="text-muted text-xs block">{{::main.userName}}<b class="caret"></b></span>
                     </a>
                     <ul uib-dropdown-menu="" class="animated fadeInRight m-t-xs">
                         <li><a href="j_spring_security_logout"><font color="black">Logout</font></a></li>
@@ -65,7 +65,7 @@
                 <ul class="nav nav-second-level" ng-class="{in: $state.includes('bse')}">
                     <li ui-sref-active="active"><a ui-sref="bse.partner">客户管理</a></li>
                     <li ui-sref-active="active"><a ui-sref="bse.vehicle">车辆管理</a></li>
-                    <li ui-sref-active="active"><a ui-sref="bse.vehicle">跟踪管理</a></li>
+                    <li ui-sref-active="active"><a ui-sref="bse.track">跟踪管理</a></li>
                     <li ui-sref-active="active"><a ui-sref="bse.receipt">回单管理</a></li>
                 </ul>
             </li>
@@ -91,7 +91,6 @@
                 </ul>
             </li>
         </ul>
-
     </div>
     <div class="sidebar-footer hidden-small">
         <a tooltip-placement="top" uib-tooltip="设置">
