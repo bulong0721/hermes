@@ -18,18 +18,21 @@
                     <thead>
                     <tr>
                         <th width="80px" class="center">操作</th>
-                        <th width="15%" class="center">名称</th>
-                        <th width="10%" class="center">编码</th>
-                        <th width="15%" class="center">负责人</th>
-                        <th width="15%" class="center">手机</th>
-                        <th width="10%" class="center">出发站</th>
-                        <th width="10%" class="center">到达站</th>
-                        <th class="center">地址</th>
+                        <th width="10%" class="center">到站日期</th>
+                        <th width="8%" class="center">状态</th>
+                        <th width="10%" class="center">到达站点</th>
+                        <th width="10%" class="center">收货人</th>
+                        <th width="10%" class="center">收货人手机</th>
+                        <th class="center">收货地址</th>
+                        <th width="8%" class="center">派送司机</th>
+                        <th width="10%" class="center">派送车牌</th>
+                        <th width="10%" class="center">司机手机</th>
+                        <th width="10%" class="center">成本</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr ng-if="$data.length<=0">
-                        <td colspan="8" class="center">没有查找到数据</td>
+                        <td colspan="11" class="center">没有查找到数据</td>
                     </tr>
                     <tr ng-repeat="row in $data">
                         <td class="center">
@@ -43,6 +46,9 @@
                         <td>{{::row.loginIP}}</td>
                         <td>{{::row.phoneNumber}}</td>
                         <td>{{::row.email}}</td>
+                        <td>{{::row.lastLogin}}</td>
+                        <td>{{::row.loginIP}}</td>
+                        <td>{{::row.phoneNumber}}</td>
                         <td class="center"><span
                                 ng-class="{true: 'label label-primary', false: 'label label-danger'}[row.activeStatusFlag]">{{row.activeStatusFlag?'激活':'冻结'}}</span>
                         </td>

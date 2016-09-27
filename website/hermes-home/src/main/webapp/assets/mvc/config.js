@@ -77,7 +77,7 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
             controller: 'orderMgrCtrl',
             data: {
                 subTitle: '派送签收',
-                datatable: 'assets/mvc/pkp/view/order_datatable.html'
+                datatable: 'assets/mvc/pkp/view/sign_datatable.html'
             },
             resolve: {
                 loadPlugin: function ($ocLazyLoad) {
