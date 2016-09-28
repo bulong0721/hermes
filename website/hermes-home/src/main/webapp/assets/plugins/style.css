@@ -10277,9 +10277,9 @@ table tr:hover, table > tbody > tr:nth-of-type(odd):hover {
     /*width: auto;*/
 /*}*/
 
-.formly .formly-field .checkbox {
-    margin: 0 0 0 20px;
-}
+/*.formly .formly-field .checkbox {*/
+    /*margin: 0 0 0 20px;*/
+/*}*/
 
 .formly-field-datepicker .form-group, .formly-field-upload .form-group, .formly-field-c_images {
     overflow: inherit !important;
@@ -10320,7 +10320,7 @@ table tr:hover, table > tbody > tr:nth-of-type(odd):hover {
     vertical-align: top;
     border-radius: 2px;
     padding: 0;
-    margin: 5px 10px 0 0;
+    margin: 0px 10px 0 0;
 }
 
 .formly input[type=checkbox]:after {
