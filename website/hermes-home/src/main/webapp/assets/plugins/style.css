@@ -2262,10 +2262,10 @@ div.dt-button-info {
     border-radius: 1px;
     color: inherit;
     display: block;
-    padding: 6px 12px;
+    padding: 4px 10px;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     width: 100%;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .form-control:focus,
@@ -4203,7 +4203,7 @@ video {
 }
 
 .wrapper-content {
-    padding: 15px 0px 85px;
+    padding: 10px 0px 85px;
 }
 
 #page-wrapper {
@@ -4345,7 +4345,7 @@ body.body-small .footer.fixed {
 .table > tfoot > tr > td {
     border-top: 1px solid #e7eaec;
     line-height: 1.42857;
-    padding: 8px;
+    padding: 5px;
     vertical-align: top;
 }
 
@@ -10273,9 +10273,9 @@ table tr:hover, table > tbody > tr:nth-of-type(odd):hover {
     margin: 0 10px 10px 20px;
 }
 
-.formly .formly-field .radio-group input, .formly .formly-field .checkbox input {
-    width: auto;
-}
+/*.formly .formly-field .radio-group input, .formly .formly-field .checkbox input {*/
+    /*width: auto;*/
+/*}*/
 
 .formly .formly-field .checkbox {
     margin: 0 0 0 20px;
@@ -10336,77 +10336,6 @@ table tr:hover, table > tbody > tr:nth-of-type(odd):hover {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg);
     border-color: #fff;
-}
-
-.uploadFileT, .uploadFileF {
-    position: relative;
-    display: inline-block;
-    margin-left: 15px;
-    cursor: pointer
-}
-
-.uploadFileT ul, .uploadFileT li, .uploadFileF ul, .uploadFileF li {
-    list-style: none;
-    margin: 0;
-    padding: 0
-}
-
-.uploadFileT li {
-    margin-right: 10px;
-    display: inline-block;
-    position: relative;
-    vertical-align: middle;
-}
-
-.uploadFileT li i {
-    background: transparent;
-    display: none
-}
-
-.uploadFileT li:hover i {
-    display: box;
-    display: -webkit-box;
-    display: -moz-box;
-    color: #fff
-}
-
-.uploadFileT input[type=file] {
-    width: 100px;
-    height: 63px;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer
-}
-
-.uploadFileT img {
-    width: 100px;
-}
-
-.uploadFileT video {
-    width: 200px !important;
-}
-
-.uploadFileT span, .uploadFileT i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background: rgba(0, 0, 0, .5);
-    text-align: center;
-    color: #fff;
-    font-size: 17px;
-    margin-left: -10px;
-    margin-top: -10px;
-}
-
-.file-box {
-    float: none;
-    display: inline-block;
 }
 
 .search-input {

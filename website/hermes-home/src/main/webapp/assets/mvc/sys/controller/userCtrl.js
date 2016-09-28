@@ -5,11 +5,11 @@ angular.module('sys', [])
     .controller('userMgrCtrl', userMgrCtrl);
 
 /**
- * roleCtrl - controller
+ * userMgrCtrl - controller
  */
-userMgrCtrl.$inject = ['$scope', '$resource', '$ngTable', '$ngForms'];
+userMgrCtrl.$inject = ['$scope', '$ngTable', '$ngForms'];
 
-function userMgrCtrl($scope, $resource, $ngTable, $ngForms) {
+function userMgrCtrl($scope, $ngTable, $ngForms) {
     var option = {
         fields: [
             {'key': 'name', 'type': 'c_input', 'templateOptions': {'label': '昵称', required: true, 'placeholder': '昵称'}},

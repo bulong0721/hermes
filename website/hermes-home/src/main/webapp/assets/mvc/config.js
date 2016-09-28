@@ -157,6 +157,62 @@ function config($stateProvider, $urlRouterProvider, $ocLazyLoadProvider) {
                 pageTitle: '结算管理'
             }
         })
+        .state('stl.statement', {
+            url: "/statement",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'vehicleMgrCtrl',
+            data: {
+                subTitle: '对账管理',
+                datatable: 'assets/mvc/stl/view/statement_datatable.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return controllerLoader($ocLazyLoad, 'bse', 'vehicleCtrl.js')
+                }
+            }
+        })
+        .state('stl.expense', {
+            url: "/expense",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'vehicleMgrCtrl',
+            data: {
+                subTitle: '开支管理',
+                datatable: 'assets/mvc/stl/view/expense_datatable.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return controllerLoader($ocLazyLoad, 'bse', 'vehicleCtrl.js')
+                }
+            }
+        })
+        .state('stl.cash', {
+            url: "/cash",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'vehicleMgrCtrl',
+            data: {
+                subTitle: '现金管理',
+                datatable: 'assets/mvc/stl/view/cash_datatable.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return controllerLoader($ocLazyLoad, 'bse', 'vehicleCtrl.js')
+                }
+            }
+        })
+        .state('stl.revenue', {
+            url: "/revenue",
+            templateUrl: "assets/mvc/desktop/view/manager.html",
+            controller: 'vehicleMgrCtrl',
+            data: {
+                subTitle: '收入管理',
+                datatable: 'assets/mvc/stl/view/revenue_datatable.html'
+            },
+            resolve: {
+                loadPlugin: function ($ocLazyLoad) {
+                    return controllerLoader($ocLazyLoad, 'bse', 'vehicleCtrl.js')
+                }
+            }
+        })
         .state('bse', {
             abstract: true,
             url: "/bse",

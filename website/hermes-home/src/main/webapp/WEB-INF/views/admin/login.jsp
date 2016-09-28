@@ -16,7 +16,7 @@
 <div class="middle-box text-center loginscreen animated fadeInDown">
     <div class="loginMain">
         <h3>云帆物流管理系统</h3>
-        <p class="client-status info"><i class="fa fa-coffee bigger-110"></i>请输入您的登录信息.</p>
+        <p class="client-status info"><i class="fa fa-coffee bigger-110"></i>&nbsp;请输入您的登录信息.</p>
         <div class="text-danger"> ${sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}</div>
         <form class="m-t" role="form" method="post" action="j_spring_security_check">
             <div class="form-group">

@@ -33,9 +33,9 @@
                     </tr>
                     <tr ng-repeat="row in $data">
                         <td class="center">
-                            <a ng-click="goEditor($index)"><i class="btn-icon fa fa-pencil"></i></a>
+                            <a ng-click="goEditor($index)" tooltip-placement="top" uib-tooltip="编辑"><i class="btn-icon fa fa-pencil"></i></a>
                             <span class="divider"></span>
-                            <a ng-click="doDelete($index)"><i class="btn-icon fa fa-trash-o"></i></a>
+                            <a ng-click="doDelete($index)" tooltip-placement="top" uib-tooltip="删除"><i class="btn-icon fa fa-trash-o"></i></a>
                         </td>
                         <td>{{::row.name}}</td>
                         <td>{{::row.login}}</td>
